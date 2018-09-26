@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/nodejs /home/vagrant/.yarn/bin/yarn.js
+  /usr/bin/nodejs /home/vagrant/.yarn/bin/yarn.js add promise-polyfill
 
 PATH: 
-  /home/vagrant/.nrm/bin:/home/vagrant/.config/nrm/global/node_modules/.bin:/home/vagrant/.yarn/bin:/home/vagrant/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+  /home/vagrant/.yarn/bin:/home/vagrant/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
 Yarn version: 
   1.10.0
@@ -14,10 +14,8 @@ Platform:
   linux x64
 
 Trace: 
-  Error: connect ENETUNREACH 47.74.196.107:443
-      at Object.exports._errnoException (util.js:1018:11)
-      at exports._exceptionWithHostPort (util.js:1041:20)
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+  Error: EPROTO: protocol error, symlink '../acorn/bin/acorn' -> '/home/vagrant/Code/larabbs-weapp/node_modules/acorn-jsx/node_modules/.bin/acorn'
+      at Error (native)
 
 npm manifest: 
   {
@@ -30,7 +28,8 @@ npm manifest:
       "build": "cross-env NODE_ENV=production wepy build --no-cache",
       "dev:web": "wepy build --output web",
       "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf",
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "eslint":"eslint --fix --ext .js,.wpy src"
     },
     "wepy": {
       "module-a": false,
