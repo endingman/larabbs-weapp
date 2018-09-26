@@ -2,8 +2,8 @@
 	"description": "larabbs weapp project",
 	"setting": {
 		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
+		"es6": false,
+		"postcss": false,
 		"minified": false,
 		"newFeature": true
 	},
