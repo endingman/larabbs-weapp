@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/nodejs /home/vagrant/.yarn/bin/yarn.js add promise-polyfill
+  /usr/bin/node /home/vagrant/.yarn/bin/yarn.js add wepy-async-function
 
 PATH: 
   /home/vagrant/.yarn/bin:/home/vagrant/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
@@ -8,7 +8,7 @@ Yarn version:
   1.10.0
 
 Node version: 
-  6.11.1
+  6.14.4
 
 Platform: 
   linux x64
