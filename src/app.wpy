@@ -116,7 +116,9 @@ export default class extends wepy.app {
     this.use('promisify')
   }
 
-  onLaunch() {}
+  onLaunch() {
+
+  }
 }
 
 </script>
