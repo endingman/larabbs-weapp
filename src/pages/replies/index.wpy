@@ -52,6 +52,7 @@
 <script>
 import wepy from 'wepy'
 import replyMixin from '@/mixins/replyMixin'
+import unreadCount from '@/mixins/unreadCount'
 
 export default class replyIndex extends wepy.page {
   config = {
@@ -66,6 +67,7 @@ export default class replyIndex extends wepy.page {
   }
 
   mixins = [replyMixin]
+  mixins = [unreadCount]
 
   async onLoad(options) {
     this.topicId = options.topic_id
