@@ -95,6 +95,7 @@ import wepy from 'wepy'
 import api from '@/utils/api'
 import util from '@/utils/util'
 import topicList from '@/components/topicList'
+import unreadCount from '@/mixins/unreadCount'
 
 export default class TopicIndex extends wepy.page {
   config = {
@@ -115,6 +116,7 @@ export default class TopicIndex extends wepy.page {
   components = {
     topiclist: topicList
   }
+  mixins = [unreadCount]
   computed = {
     currentCategoryId() {
       return this.currentCategory.id || 0
