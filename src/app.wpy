@@ -143,6 +143,9 @@ export default class extends wepy.app {
     setInterval(() => {
       this.updateUnreadCount()
     }, 6000)
+
+    // 获取用户权限
+    this.getPerms()
   }
 
   async updateUnreadCount() {
@@ -156,6 +159,44 @@ export default class extends wepy.app {
     if (notificationResponse.statusCode === 200) {
       this.globalData.unreadCount = notificationResponse.data.unread_count
     }
+  }
+
+  async getPerms() {
+    let perms = []
+    if (!this.checkLogin()) {
+      return
+    }
+    // 缓存中没有则请求接口获取
+    try {
+      let permsResponse = await api.authRequest('user/permissions', false)
+      // 请求成功，放入 storage 缓存中
+      if (permsResponse.statusCode === 200) {
+        perms = permsResponse.data.data
+        wepy.setStorageSync('perms', perms)
+      }
+    } catch (err) {
+      console.log(err)
+      wepy.showModal({
+        title: '提示',
+        content: '获取用户权限失败，可尝试重启小程序'
+      })
+    }
+    return perms
+  }
+
+  // 判断用户权限
+  can(targetPerm) {
+    if (!this.checkLogin()) {
+      return false
+    }
+
+    let perms = wepy.getPerms('perms')
+
+    // 判断权限中是否有目标权限
+    if (perms.find(perm => perms.name === targetPerm)) {
+      return true
+    }
+    return false
   }
 }
 
