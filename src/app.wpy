@@ -190,7 +190,7 @@ export default class extends wepy.app {
       return false
     }
 
-    let perms = wepy.getPerms('perms')
+    let perms = this.getPerms('perms')
 
     // 判断权限中是否有目标权限
     if (perms.find(perm => perms.name === targetPerm)) {
