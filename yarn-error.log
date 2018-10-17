@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /home/vagrant/.yarn/bin/yarn.js add moment
+  /usr/local/bin/node /home/vagrant/.yarn/bin/yarn.js add wepy-plugin-replace wepy-plugin-imagemin wepy-eslint
 
 PATH: 
   /home/vagrant/.yarn/bin:/home/vagrant/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
@@ -37,6 +37,7 @@ npm manifest:
     "author": "endingman <631925002@qq.com>",
     "license": "MIT",
     "dependencies": {
+      "moment": "^2.22.2",
       "redux": "^3.7.2",
       "redux-actions": "^2.2.1",
       "redux-promise": "^0.5.3",
@@ -1773,6 +1774,11 @@ Lockfile:
     integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
     dependencies:
       minimist "0.0.8"
+  
+  moment@^2.22.2:
+    version "2.22.2"
+    resolved "https://registry.npmjs.org/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+    integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
   
   ms@2.0.0:
     version "2.0.0"
